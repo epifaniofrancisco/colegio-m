@@ -1,7 +1,21 @@
+@font-face {
+    font-family: 'open-sans';
+    src: url('../fonts/OpenSans-VariableFont_wdth\,wght.ttf');
+}
+
+/* @font-face {
+    font-family: 'open-sans-lim';
+    src: url('../fonts/OpenSans-Italic-VariableFont_wdth\,wght.ttf');
+} */
+
 * {
-    margin: 0;
     padding: 0;
+    margin: 0;
     box-sizing: border-box;
+}
+
+body {
+    font-family: 'open-sans';
 }
 
 a {
@@ -12,101 +26,404 @@ nav, ul {
     list-style: none;
 }
 
+/* nav-bar */
 .nav-bar {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    height: 5rem;
-    background-color: white;
+    min-height: 5rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 2rem;
+    padding: 1rem 2.2rem;
+    /* background-color: white; */
+    z-index: 200;
 }
 
 .logo {
-    display: flex;
     padding: .5rem;
+    display: flex;
     align-items: center;
 }
 
 .logo img {
-    width: 50px;
-    height: 50px;
-    margin-right: .2rem;
+    margin-right: .6rem; 
 }
 
 .logo .logo-label {
-    font-size: 2rem;
+    font-size: 1.6rem;
+    color: white;
 }
 
-nav, .nav-ul {
-    display: flex;
+.nav .nav-ul {
+   display: flex; 
 }
 
-nav .nav-ul .nav-items {
-    margin-right: 3rem;
+.nav .nav-ul .nav-items {
+    margin-right: 1rem;
 }
 
-.nav-items:last-child {
+.nav .nav-ul .nav-items:last-child {
     margin-right: 0;
 }
 
-nav .nav-ul .nav-items a {
+.nav .nav-ul .nav-items a {
     font-size: 1.2rem;
+    color: white;
 }
 
-// Banner
-.banner {
-    width: 100%;
-    height: 100vh;
-    background-color: black;
-    background-image: url(../img/banner.jpg);
-    background-position: top left;
-    background-size: cover;
+.nav .nav-ul .nav-items a:hover, .nav .nav-ul .nav-items a.active-link {
+    color: #76a9ac;
+}
+
+
+
+#burger-menu {
+    background-color: transparent;
+    border: none;
+    color: white;
+    cursor: pointer;
+    padding: 1rem;
+    font-size: 25px;
+    display: none;
+}
+
+/* Fim nav-bar */
+
+/* Side-Drawer*/
+.side-drawer {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100%;
+    background-color: white;
+    width: 60%;
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 2rem 1rem;
+    transform: translateX(100%);
+    transition: 0.3s ease-out all;
+    z-index: 300;
 }
 
-.banner h1 {
-    color: white;
-    font-size: 3rem;
-    margin-bottom: 1.5rem;
-    z-index: 100;
+.mostra-drawer {
+    transform: translateX(0);
 }
 
-.banner h4 {
-    color: white;
-    font-size: 1.5rem;
-    text-transform: uppercase;
-    margin-bottom: 1.5rem;
-    z-index: 100;
+.side-drawer ul li a {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 1rem;
+    color: #2a2929;
 }
 
-.banner .banner-btn {
+.side-drawer ul li a:hover, .side-drawer ul li a.active-link {
+    color: #76a9ac;
+}
+
+/* Fim Side-Drawer */
+
+/* Page-Overlay */
+.page-overlay {
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 250;
+    cursor: zoom-out;
+    display: none;
+}
+
+.btn-close {
+    background-color: transparent;
+    padding: 1rem;
     color: white;
-    background-color: #0066ff;
-    font-size: 1.1rem;
-    padding: 1rem 3rem;
-    border-radius: .25rem;
-    z-index: 100;
+    font-size: 25px;
+    border: none;
+    cursor: pointer;
+}
+
+.mostra-overlay {
+    display: block;
+}
+/* Fim Page-Overlay */
+
+/* banner */
+.banner {
+    width: 100%;
+    height: 100vh;
+    background-image: url('../img/banner.jpg');
+    background-position: top left;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2rem;
+}
+
+.banner-sub-page {
+    height: 30vh;
 }
 
 .banner .overlay {
     position: absolute;
     top: 0;
     left: 0;
+    background-color: rgba(0, 0, 0, .5);
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, .5);
-    z-index: 8;
 }
 
-@media (max-width: 585px) {
-    .nav-bar {
+.banner .overlay-sub-page {
+    height: 30%;
+}
+
+.banner h1, .banner p {
+    color: white;
+}
+
+.banner h1 {
+    font-size: 3rem;
+    z-index: 100;
+}
+
+.banner p {
+    font-size: 1.5rem;
+    /* text-transform: uppercase; */
+    z-index: 100;
+    margin-bottom: 1.5rem;
+}
+
+.banner .banner-btn {
+    padding: 1.5rem 3.5rem;
+    border-radius: .25rem;
+    background-color: #76a9ac;
+    color: white;
+    font-size: 1.1rem;
+    font-weight: bold;
+    z-index: 100;
+}
+/* Fim Banner */
+
+/* Visao */
+section.visao {
+    width: 100%;
+    padding: 7rem 4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.visao  h1.visao-titulo {
+    color: #2a2929;
+    font-size: 2.8rem;
+}
+
+.section-title {
+    color: #2a2929;
+    font-size: 2.8rem;
+    margin-bottom: 2rem;
+}
+
+.visao-p {
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+}
+
+.visao-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.visao-item {
+    display: flex;
+    flex-direction: column;
+    max-width: 25rem;
+}
+
+.visao-item i {
+    color: #2a2929;
+    font-size: 3rem;
+}
+
+.visao-item p{
+    color: #2a2929;
+    text-align: center;
+}
+/* Fim Visao */
+
+/* Precos */
+.precos {
+    width: 100%;
+    padding: 5rem 4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.precos h1 {
+    font-size: 2.8rem;
+    color: #2a2929;
+    margin-bottom: 2rem;
+}
+
+.precos-container {
+    display: flex;
+}
+
+.precos-card {
+    margin-right: 2rem;
+    border: 1px solid #d2cece;
+    width: 15rem;
+    height: 20rem;
+    border-radius: .25rem;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 2px 2px 10px -10px rgb(106, 103, 103);
+}
+
+.card-label h4 {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.card-label p {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.card-label i {
+    color: #80FF80;
+}
+
+.card-btn {
+    border: 1px solid #76a9ac;;
+    padding: 1rem 2rem;
+    border-radius: .25rem;
+    text-align: center;
+    color: white;
+    background-color: #76a9ac;
+}
+
+.location {
+    padding: 0 4rem;
+}
+
+footer {
+    margin-top: 5rem;
+    width: 100%;
+    padding: 5rem 4rem;
+    background-color: #282828;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+footer h4 {
+    margin-bottom: .6rem;
+}
+
+footer .social {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+footer a {
+    color: white;
+    margin-right: 1rem;
+}
+
+footer a:last-child {
+    margin-right: 0;
+}
+
+@media(max-width: 800px) {
+    .banner h1 {
+        font-size: 2.5rem;
+    }
+
+    .banner p {
+        font-size: 1.5rem;
+    }
+
+    section.visao {
+        padding-left: 3rem;
+        padding-right: 3rem;
+    }
+
+    .visao-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .visao-item {
+        margin-bottom: 3rem;
+        max-width: 80%;
+    }
+
+    .visao-item:last-child {
+        margin-bottom: 0;
+    }
+
+    .precos-container {
         flex-direction: column;
     }
-    
+
+    .precos-card {
+        margin-right: 0;
+        margin-bottom: 2rem;
+    }
+}
+
+@media(max-width: 650px) {
+    .nav-bar {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .nav-bar nav {
+        display: none;
+    }
+
+    #burger-menu {
+        display: block;
+    }
+
+    .banner {
+        padding: 1rem;
+    }
+
+    .banner h1 {
+        font-size: 2rem;
+    }
+
+    .banner p {
+        font-size: 1.2rem;
+    }
+}
+
+@media(max-width: 390px) {
+    .banner h1 {
+        font-size: 1.8rem;
+    }
+
+    .banner p {
+        font-size: 1rem;
+    } 
 }

@@ -1,2 +1,2 @@
 # colegio-m
-Site para o colégio M
+Site para o colegio M

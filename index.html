@@ -4,55 +4,150 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <!-- <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap" rel="stylesheet"> -->
+    <link rel="shortcut icon" href="./img/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="./fontawesome/css/all.css">
+    <link rel="stylesheet" href="./css/index.css">
     <title>Colégio M</title>
-    <link rel="stylesheet" href="css/index.css">
 </head>
-
-<style>
-    
-.banner {
-    width: 100%;
-    height: 100vh;
-    background-image: url(../img/banner.jpg);
-    background-position: top left;
-    background-size: cover;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-</style>
 <body>
+    <!-- nav-bar -->
     <header class="nav-bar">
-        <a href="index.html" class="logo"><img src="img/logo.png" alt="Uma imagem cinza contendo a logo do colégio M, com a letra M ao cento e a logo parecendo um livro aberto">
-            <span class="logo-label">Colégio M</span>
+        <a href="index.html" class="logo">
+            <img width="70px" src="./img/logo.png" alt="">
+            <span class="logo-label">Colégio M </span>
         </a>
-
-        <nav>
+        <nav class="nav">
             <ul class="nav-ul">
                 <li class="nav-items">
                     <a href="sobre.html">Sobre</a>
                 </li>
                 <li class="nav-items">
-                    <a href="servicos-html">Serviços</a>
+                    <a href="servicos.html">Serviços</a>
                 </li>
                 <li class="nav-items">
                     <a href="galeria.html">Galeria</a>
                 </li>
                 <li class="nav-items">
-                    <a href="contacto.html">Contacte-nós</a>
+                    <a href="contacto.html">Contacto</a>
                 </li>
             </ul>
         </nav>
+        <button id="burger-menu">
+            <i class="fa-solid fa-bars"></i>
+        </button>
     </header>
-
+    <!-- Fim nav-bar -->
+    <!-- Side-Drawer -->
+    <nav class="side-drawer">
+        <ul class="nav-ul">
+            <li class="nav-items">
+                <a href="sobre.html">Sobre</a>
+            </li>
+            <li class="nav-items">
+                <a href="servicos.html">Serviços</a>
+            </li>
+            <li class="nav-items">
+                <a href="galeria.html">Galeria</a>
+            </li>
+            <li class="nav-items">
+                <a href="contacto.html">Contacto</a>
+            </li>
+        </ul>
+    </nav>
+    <!-- Fim Side-Drawer -->
+    <!-- Page-Overlay -->
+    <div class="page-overlay">
+        <button class="btn-close">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+    </div>
+    <!-- Fim Page-Overlay -->
     <!-- Banner -->
     <section class="banner">
         <div class="overlay"></div>
-        <h1>O Lugar para Aprender a Crescer</h1>
-        <h4>Conhecimento Acompanhado A Prática</h4>
-        <a href="contacto.html
-        " class="banner-btn">Comece</a>
+        <h1>O Lugar Para Aprender e Crescer</h1>
+        <p>Conhecimento Acompanhado À Prática</p>
+        <a href="contacto.html" class="banner-btn">Contacte-nos</a>
     </section>
+    <!-- Fim Banner -->
+
+    <!-- Visao -->
+    <section class="visao">
+        <h1 class="visao-titulo">O Que Nos Torna Diferentes</h1>
+        <p class="visao-p">Lorem ipsum dolor, sit amet consectetu Perspiciatis ducimus deleniti consequuntur!</p>
+        <div class="visao-container">
+            <div class="visao-item">
+                <i class="fa-solid fa-book-open-reader"></i>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ex?
+                </p>
+            </div>
+            <div class="visao-item">
+                <i class="fa-solid fa-person-chalkboard"></i>
+                <p>Lorem ipsum dolor sit amet consectetur. Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio?</p>
+            </div>
+            <div class="visao-item">
+                <i class="fa-solid fa-graduation-cap"></i>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facere.
+                </p>
+            </div>
+        </div>
+    </section>
+    <!-- Fim Visao -->
+    <!-- Precos -->
+    <sectio class="precos">
+        <h1>Os Nossos Preços</h1>
+        <div class="precos-container">
+            <div class="precos-card">
+                <div class="card-label">
+                    <h4>Primerio Ciclo</h4>
+                    <p><i class="fa-solid fa-money-bills"></i> 10.000kz</p>
+                </div>
+                <a href="#" class="card-btn">Saber mais</a>
+            </div>
+            <div class="precos-card">
+                <div class="card-label">
+                    <h4>Segundo Ciclo</h4>
+                    <p><i class="fa-solid fa-money-bills"></i> 20.000kz</p>
+                </div>
+                <a href="#" class="card-btn">Saber mais</a>
+            </div>
+            <div class="precos-card">
+                <div class="card-label">
+                    <h4>Formação</h4>
+                    <p><i class="fa-solid fa-money-bills"></i> 10.000kz</p>
+                </div>
+                <a href="#" class="card-btn">Saber mais</a>
+            </div>
+        </div>
+    </sectio>
+
+    <section class="location">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7885.28932876506!2d13.2673669!3d-8.8194129!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1a51f5d9dc51eddb%3A0xbdccc009e113a48d!2sCamama%2C%20Luanda!5e0!3m2!1sen!2sao!4v1664445565253!5m2!1sen!2sao" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </section>
+    
+    <!-- Rodape -->
+    <footer>
+        <h4>Colégio M</h4>
+        <div class="social">
+            <a href="#" target="_blank">
+                <i class="fa-brands fa-facebook"></i>
+            </a>
+            <a href="#" target="_blank">
+                <i class="fa-brands fa-twitter"></i>
+            </a>
+            <a href="#" target="_blank">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+        </div>
+        <p>&copy; 2022 - Isaac Ndala</p>
+    </footer>
+    <!-- Fim Rodaper -->
+
+    <script src="./js/index.js"></script>
 </body>
 </html>
